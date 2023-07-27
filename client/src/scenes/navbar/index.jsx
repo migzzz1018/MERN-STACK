@@ -25,7 +25,7 @@ import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 
-const NavBar = () => {
+const Navbar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -39,8 +39,8 @@ const NavBar = () => {
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
-  const fullName = `Miguel Madriaga`;
   // const fullName = `${user.firstName} ${user.lastName}`;
+  const fullName = `Migs Madriaga`;
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
@@ -57,13 +57,13 @@ const NavBar = () => {
             },
           }}
         >
-          TWITTERCopy
+          TwitterCopy
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
-            gap="2rem"
             backgroundColor={neutralLight}
             borderRadius="9px"
+            gap="3rem"
             padding="0.1rem 1.5rem"
           >
             <InputBase placeholder="Search..." />
@@ -73,7 +73,8 @@ const NavBar = () => {
           </FlexBetween>
         )}
       </FlexBetween>
-      {/*DESKTOP NAV*/}
+
+      {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
           <IconButton onClick={() => dispatch(setMode())}>
@@ -119,13 +120,13 @@ const NavBar = () => {
         </IconButton>
       )}
 
-      {/* MOBILE NAV*/}
+      {/* MOBILE NAV */}
       {!isNonMobileScreens && isMobileMenuToggled && (
         <Box
-          postition="fixed"
+          position="fixed"
           right="0"
           bottom="0"
-          heigth="100%"
+          height="100%"
           zIndex="10"
           maxWidth="500px"
           minWidth="300px"
@@ -194,4 +195,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
