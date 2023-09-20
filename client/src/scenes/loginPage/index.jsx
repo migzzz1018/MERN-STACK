@@ -1,4 +1,5 @@
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import Form from "./Form"
 
 const LoginPage = () => {
   const theme = useTheme();
@@ -13,6 +14,19 @@ const LoginPage = () => {
       >
         <Typography fontWeight="bold" fontSize="32px" color="primary">
           TwitterCopy
+        </Typography>
+      </Box>
+
+      <Box 
+        width={isNonMobileScreen ? "50%" : "93%"}
+        p="2rem"
+        m="2rem auto"
+        borderRadius="1.5rem"
+        backgroundColor = {theme.palette.background.alt}
+      >
+        <Typography fontWeight="500" variant="h5" sx={{ mb:"1.5rem"}}>
+
+            Welcome to TwtitterClone, The Social media Clone
         </Typography>
       </Box>
     </Box>
